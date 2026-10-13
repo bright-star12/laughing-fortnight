@@ -10,11 +10,11 @@ int delete(int a[],int n,int item)
                 m++;
                 }
           }
-     return 0;
+     return m;
  }
  int main()
  {
-    int a[100],n,item;
+    int a[100],n,item,t;
     printf("Enter the number of elements in the array: ");
     scanf("%d",&n);
     printf("Enter the elements of the array: ");
@@ -24,11 +24,10 @@ int delete(int a[],int n,int item)
         }
     printf("Enter the item to be deleted: ");
     scanf("%d",&item);
-    delete(a,n,item);
+    t=delete(a,n,item);
     printf("Array after deletion: ");
-    for(int i=0;i<n;i++)
+    for(int i=0;i<t;i++)
         {
-            if(a[i]!=item)
                 printf("%d ",a[i]);
         }
     return 0;

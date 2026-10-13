@@ -37,19 +37,19 @@ linklist mergelist(linklist la,linklist lb)
     return la;
  }
 void createlist(linklist*l,int arr[],int n)
- {
+{
     *l=(linklist)malloc(sizeof(point));
     (*l)->next=NULL;
     point *tail=*l;
-    for(int i=0;i<n;i++)
-    {
+	for(int i=0;i<n;i++)
+	{
         point *p=(point*)malloc(sizeof(point));
         p->data=arr[i];
         p->next=NULL;
         tail->next=p;
         tail=p;
-    }
- }
+		}
+	}
 void printlist(linklist l)
  {
     point *p=l->next;
@@ -59,14 +59,14 @@ void printlist(linklist l)
         p=p->next;
     }
     printf("\n");
- }
+}
 int main()
- {
+{
     int a[]={1,2,3},b[]={3,4,5};
     linklist la,lb;
     createlist(&la,a,3);
     createlist(&lb,b,3);
     linklist lres=mergelist(la,lb);
     printlist(lres);
-    return 0;        
+	return 0;
 }
