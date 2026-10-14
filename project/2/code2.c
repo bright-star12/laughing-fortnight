@@ -6,10 +6,10 @@ typedef struct point
     struct point *next;
  }point,*linklist;
 linklist mergelist(linklist la,linklist lb)
- {
+{
     point* pa=la->next,*pb=lb->next,*pc=la;
     while(pa!=NULL&&pb!=NULL)
-    {
+{
         if(pa->data<pb->data)
         {
             pc->next=pa;
@@ -35,7 +35,7 @@ linklist mergelist(linklist la,linklist lb)
     pc->next=pa?pa:pb;
     free(lb);
     return la;
- }
+}
 void createlist(linklist*l,int arr[],int n)
 {
     *l=(linklist)malloc(sizeof(point));
@@ -55,7 +55,7 @@ void printlist(linklist l)
     point *p=l->next;
     while(p)
     {
-        printf("%d",p->data);
+        printf("%d ",p->data);
         p=p->next;
     }
     printf("\n");
